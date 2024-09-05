@@ -1,0 +1,3 @@
+Create a clear, engaging sentence that correctly uses the word [WORD].
+The sentence should provide context clues to help understand the word's meaning.
+Aim for a natural, conversational tone suitable for everyday use."
