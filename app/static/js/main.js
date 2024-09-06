@@ -21,10 +21,23 @@ function startTest() {
         });
 }
 
+let currentAudio = null;
+
 function playCurrentWord() {
-    new Audio(currentAudioFiles[currentWordIndex]).play()
-        .catch(e => console.error('Audio play failed', e));
+    if (currentAudio) {
+        currentAudio.pause();
+    }
+    currentAudio = new Audio(currentAudioFiles[currentWordIndex]);
+    currentAudio.play().catch(e => console.error('Audio play failed', e));
 }
+
+function stopTalking() {
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
+}
+
 
 function submitWord() {
     const userInput = document.getElementById('user-input').value;
